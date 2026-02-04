@@ -34,7 +34,7 @@ async def admin_reply(message: Message):
          
     
 @dp.message()
-async def forward_to_admin(message: Message):
+async def forward_to_admin(message: types.Message):
     text = (
         "📩 Yangi xabar:\n\n"
         f"👤 From: @{message.from_user.username or 'Username yoq'}\n"
