@@ -1,12 +1,12 @@
+import os
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart
 from aiogram.types import Message
-from .env import BOT_TOKEN
 
-TOKEN = BOT_TOKEN
 
-ADMIN_ID = 7213756755
+BOT_TOKEN = os.getenv("TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
