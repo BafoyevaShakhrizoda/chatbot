@@ -8,7 +8,7 @@ from aiogram.types import Message
 BOT_TOKEN = os.getenv("TOKEN")
 ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
-bot = Bot(token=TOKEN)
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 @dp.message(CommandStart())
