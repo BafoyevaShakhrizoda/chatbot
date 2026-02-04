@@ -18,7 +18,7 @@ async def start(message: Message):
         "Shunchaki xabaringizni yozing ✍️"               
                          )
     
-@dp.messsage(lambda message: message.from_user.id == ADMIN_ID)
+@dp.message(lambda message: message.from_user.id == ADMIN_ID)
 async def admin_reply(message: Message):
     replied_text = message.reply_to_message.text
     try:
