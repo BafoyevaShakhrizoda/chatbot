@@ -34,14 +34,14 @@ async def admin_reply(message: Message):
          
     
 @dp.message()
-async def forward_to_admin(message: types.Message):
+async def forward_to_admin(message: Message):
     text = (
         "📩 Yangi xabar:\n\n"
         f"👤 From: @{message.from_user.username or 'Username yoq'}\n"
         f"🆔 ID: {message.from_user.id}\n\n"
         f"{message.text}"
     )
-    await bot.forward(ADMIN_ID)
+    await bot.send_message(ADMIN_ID, text)
     await message.answer("Xabaringiz yuborildi! Rahmat 😊")
     
 async def main():
