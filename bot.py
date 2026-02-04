@@ -41,7 +41,7 @@ async def forward_to_admin(message: Message):
         f"🆔 ID: {message.from_user.id}\n\n"
         f"{message.text}"
     )
-    await bot.send_message(ADMIN_ID, text)
+    await bot.forward(ADMIN_ID)
     await message.answer("Xabaringiz yuborildi! Rahmat 😊")
     
 async def main():
