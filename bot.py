@@ -18,7 +18,7 @@ async def start(message: Message):
         "Assalomu Alaykum, salomatmisiz?"              
                          )
     
-@dp.message(lambda message: message.from_user.id == ADMIN_ID)
+@dp.message(lambda message: message.from_user.id == ADMIN_ID and message.reply_to_message)
 async def admin_reply(message: Message):
     
     if not message.reply_to_message:
