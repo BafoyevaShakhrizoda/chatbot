@@ -20,7 +20,12 @@ async def start(message: Message):
     
 @dp.message(lambda message: message.from_user.id == ADMIN_ID)
 async def admin_reply(message: Message):
-    replied_text = message.reply_to_message.text  or message.reply_to_message.caption or ""
+    
+    if not message.reply_to_message:
+        return 
+    
+    replied_text = message.reply_to_message.text  or message.reply_to_message.caption or " "
+    
     try:
         user_id = int(replied_text.split("🆔 ID: ")[1].split("\n")[0] ) 
         
